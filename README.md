@@ -98,24 +98,6 @@ Standardized JSON errors:
 - `npm test` – runs unit tests for validators and core transaction logic.
   - Example assertions: validation accepts/rejects payloads, overdraft prevents transfers, money utils convert correctly.
 
-## Deployment
-- Render
-- Set environment variables in hosting provider: `PORT`, `JWT_SECRET`, `DATABASE_URL`.
-- Startup command: `npm start`.
-- Use a production database (e.g., Postgres) by updating `prisma/schema.prisma` and `DATABASE_URL`, then run migrations.
 
-## Postman/Usage Examples
-- Register:
-  - `POST /api/auth/register`
-  - Body: `{ "email": "alice@example.com", "password": "password123" }`
-- Login:
-  - `POST /api/auth/login`
-  - Response: `{ token }`
-- Me:
-  - Header: `Authorization: Bearer <token>`
-  - `GET /api/users/me`
-- Transfer:
-  - Header: `Authorization: Bearer <token>`
-  - Body: `{ "toUserId": 2, "amount": 10 }`
-  - `POST /api/transactions/transfer`
+
 
