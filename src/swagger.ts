@@ -4,7 +4,7 @@ import swaggerUi from 'swagger-ui-express';
 const openapi = {
   openapi: '3.0.0',
   info: { title: 'Koinsave API', version: '1.0.0' },
-  servers: [{ url: 'http://localhost:3000' }],
+  servers: [{ url: '/' }],
   components: {
     securitySchemes: { bearerAuth: { type: 'http', scheme: 'bearer', bearerFormat: 'JWT' } },
     schemas: {

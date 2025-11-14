@@ -9,6 +9,6 @@ export const config = {
 };
 
 if (!process.env.JWT_SECRET) {
-  // Warn in dev; in production, enforce via deployment config
+  
   console.warn('Warning: JWT_SECRET not set. Using a development fallback.');
 }
