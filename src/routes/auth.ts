@@ -1,10 +1,10 @@
-import { Router } from 'express';
+import { Router, Request, Response, NextFunction } from 'express';
 import { registerSchema, loginSchema } from '../validators/authValidators';
 import { register, login } from '../services/authService';
 
 const router = Router();
 
-router.post('/register', async (req, res, next) => {
+router.post('/register', async (req: Request, res: Response, next: NextFunction) => {
   try {
     const parsed = registerSchema.parse(req.body);
     const user = await register(parsed.email, parsed.password);
@@ -12,7 +12,7 @@ router.post('/register', async (req, res, next) => {
   } catch (e) { next(e); }
 });
 
-router.post('/login', async (req, res, next) => {
+router.post('/login', async (req: Request, res: Response, next: NextFunction) => {
   try {
     const parsed = loginSchema.parse(req.body);
     const token = await login(parsed.email, parsed.password);

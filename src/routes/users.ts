@@ -1,10 +1,10 @@
-import { Router } from 'express';
+import { Router, Request, Response, NextFunction } from 'express';
 import { requireAuth } from '../middleware/auth';
 import { prisma } from '../services/prisma';
 
 const router = Router();
 
-router.get('/me', requireAuth, async (req, res, next) => {
+router.get('/me', requireAuth, async (req: Request, res: Response, next: NextFunction) => {
   try {
     const userId = (req as any).user.userId as number;
     const user = await prisma.user.findUnique({ where: { id: userId } });

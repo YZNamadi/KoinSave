@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import { config } from './config';
@@ -24,7 +24,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/transactions', transactionRoutes);
 
-app.get('/health', (_, res) => res.json({ success: true, data: { status: 'ok' } }));
+app.get('/health', (_: Request, res: Response) => res.json({ success: true, data: { status: 'ok' } }));
 
 app.use(errorHandler);
 
